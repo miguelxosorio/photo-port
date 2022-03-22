@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// ReactDOM library is rendering the App component at the root element in the HTML - attaches the React components to the DOM
 ReactDOM.render(
   <React.StrictMode>
     <App />
