@@ -10,7 +10,9 @@ import{ render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect';
 // import about component
 import About from "..";
+
 afterEach(cleanup);
+
 // the string passed declares which component is being tested
 describe('About component', () => {
     // first test
@@ -24,7 +26,8 @@ describe('About component', () => {
         // render about
         // index.test.js.snap file is a serialized version of the component's node structure, which includefs elements, attributes, and text content
         // folder __snapshots__ will serve as the base model of the component's structure, and will be compared against new snapshots that are created by the asFragment function
-        const { asFragment } = render(<About/>);
-        expect(asFragment()).toMatchSnapshot()
-    })
+        const { asFragment } = render(<About />);
+
+        expect(asFragment()).toMatchSnapshot();
+    });
 })
