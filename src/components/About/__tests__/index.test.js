@@ -10,7 +10,7 @@ import{ render, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect';
 // import about component
 import About from "..";
-
+afterEach(cleanup);
 // the string passed declares which component is being tested
 describe('About component', () => {
     // first test
