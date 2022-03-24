@@ -111,7 +111,7 @@ const Photolist = ({ category }) => {
                 src={require(`../../assets/small/${category}/${i}.jpg`)}
                 alt={image.name}
                 className="img-thumbnail mx-1"
-                key={image.name}
+                key={image.name} // needed when looping over an array to render its elements in JSX to avoid the error message
                 />
                 ))}
             </div>
