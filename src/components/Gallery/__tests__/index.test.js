@@ -17,11 +17,10 @@ describe('Gallery is rendering', () => {
         const { asFragment } = render(<Gallery currentCategory={portrait} />)
         expect(asFragment()).toMatchSnapshot()
     })
+})
 
-    // eslint-disable-next-line jest/no-identical-title
-    it('renders', () => {
-        const { getByTestId } = render(<Gallery currentCategory={portrait} />)
-        // eslint-disable-next-line testing-library/prefer-screen-queries
-        expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
-    })
+it('renders', () => {
+    const { getByTestId } = render(<Gallery currentCategory={portrait} />)
+    // eslint-disable-next-line testing-library/prefer-screen-queries
+    expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
 })
