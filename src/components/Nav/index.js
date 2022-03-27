@@ -26,7 +26,7 @@ function Nav(props) {
 
   // useEffect to Change the DOM - Hook to trigger a re-render on a variable value change
   useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory);
+    document.title = capitalizeFirstLetter(currentCategory.name);
   }, [currentCategory]);
 
   return (
