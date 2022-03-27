@@ -5,6 +5,7 @@ function ContactForm() {
     const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   
     const [errorMessage, setErrorMessage] = useState('');
+    // destructure the formState object into its named properties
     const { name, email, message } = formState;
   
     const handleSubmit = (e) => {
@@ -42,6 +43,7 @@ function ContactForm() {
           </div>
           <div>
             <label htmlFor="email">Email address:</label>
+            {/* onBlur attribute will fire the event once the user has changed focus from the input field, thus allowing the user to finish their entry before validating their input */}
             <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
           </div>
           <div>
