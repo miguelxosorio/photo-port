@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from '../Modal';
 
 const Photolist = ({ category }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPhoto, setCurrentPhoto] = useState();
+  
     const [photos] = useState([
         {
           name: 'Grocery aisle',
@@ -99,18 +102,17 @@ const Photolist = ({ category }) => {
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
       ]);
-        const [currentPhoto, setCurrentPhoto] = useState();
-        const [isModalOpen, setIsModalOpen] = useState(false);
-        
+
+        // going through each photo in the photos array, trying to find every photo that matches the category that was selected by the user
+        // If a photo matches the condition, it is returned in an array and assigned to currentPhotos
+        const currentPhotos = photos.filter((photo) => photo.category === category);
+        // Then we can map the currentPhotos array to render each photo that matches the category selected by the user
+
         const toggleModal = (image, i) => {
           setCurrentPhoto({...image, index: i});
           setIsModalOpen(true);
         }
 
-    // going through each photo in the photos array, trying to find every photo that matches the category that was selected by the user
-    // If a photo matches the condition, it is returned in an array and assigned to currentPhotos
-    const currentPhotos = photos.filter((photo) => photo.category === category);
-    // Then we can map the currentPhotos array to render each photo that matches the category selected by the user
     return (
         <div>
           {isModalOpen && (

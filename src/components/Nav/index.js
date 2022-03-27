@@ -57,8 +57,9 @@ function Nav(props) {
               {/* onClick() method then provide a function name to the method */}
               {/* The onClick() attribute is expecting a callback function declaration */}
               {/* It's important that we wrap it in a function declaration rather than just calling categorySelected(category.name), which would cause the function to get called whenever the component renders as well */}
-              <span onClick={() => {setCurrentCategory(category)
-              setContactSelected(false)
+              <span onClick={() => {
+                setCurrentCategory(category)
+                setContactSelected(false)
               }} >
                 {capitalizeFirstLetter(category.name)}
               </span>
