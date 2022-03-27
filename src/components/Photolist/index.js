@@ -110,7 +110,7 @@ const Photolist = ({ category }) => {
 
         const toggleModal = (image, i) => {
           setCurrentPhoto({...image, index: i});
-          setIsModalOpen(true);
+          setIsModalOpen(!isModalOpen);
         }
 
     return (
@@ -120,13 +120,16 @@ const Photolist = ({ category }) => {
           )}
             <div className="flex-row">
                 {currentPhotos.map((image, i) => (
+                <div>
+                <p>{image.name}</p>
                 <img
-                src={require(`../../assets/small/${category}/${i}.jpg`).default}
+                src={require(`../../assets/small/${category}/${i}.jpg`)}
                 alt={image.name}
                 className="img-thumbnail mx-1"
                 onClick={() => toggleModal(image, i)}
-                key={image.name} // needed when looping over an array to render its elements in JSX to avoid the error message
+                key={image.name[i]} // needed when looping over an array to render its elements in JSX to avoid the error message
                 />
+                </div>
                 ))}
             </div>
         </div>
